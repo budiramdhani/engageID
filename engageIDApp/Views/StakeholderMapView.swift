@@ -2,46 +2,42 @@ import SwiftUI
 
 struct StakeholderMapView: View {
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 20) {
             Text("Stakeholder Mapping")
                 .font(.title2)
                 .bold()
 
-            Text("Matriks Power vs Interest")
+            Text("Matrix: Power vs Interest")
                 .foregroundColor(.gray)
 
             Spacer()
 
             VStack(spacing: 40) {
                 HStack(spacing: 40) {
-                    VStack {
-                        Text("😐")
-                        Text("Low Power\nLow Interest")
-                            .multilineTextAlignment(.center)
-                    }
-                    VStack {
-                        Text("🙂")
-                        Text("High Power\nLow Interest")
-                            .multilineTextAlignment(.center)
-                    }
+                    quadrantBox(title: "Keep Satisfied", color: .yellow)
+                    quadrantBox(title: "Manage Closely", color: .red)
                 }
                 HStack(spacing: 40) {
-                    VStack {
-                        Text("🤝")
-                        Text("Low Power\nHigh Interest")
-                            .multilineTextAlignment(.center)
-                    }
-                    VStack {
-                        Text("💼")
-                        Text("High Power\nHigh Interest")
-                            .multilineTextAlignment(.center)
-                    }
+                    quadrantBox(title: "Monitor", color: .gray)
+                    quadrantBox(title: "Keep Informed", color: .blue)
                 }
             }
 
             Spacer()
         }
         .padding()
-        .navigationTitle("Map")
+        .navigationTitle("Stakeholder Map")
+    }
+
+    func quadrantBox(title: String, color: Color) -> some View {
+        VStack {
+            Text(title)
+                .font(.caption)
+                .multilineTextAlignment(.center)
+                .padding()
+                .frame(width: 120, height: 80)
+                .background(color.opacity(0.2))
+                .cornerRadius(10)
+        }
     }
 }
