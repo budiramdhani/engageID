@@ -1,3 +1,5 @@
+// engageIDApp/ContentView.swift
+
 import SwiftUI
 
 struct ContentView: View {
@@ -7,14 +9,25 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+
+            StakeholderListView()
+                .tabItem {
+                    Label("Stakeholder", systemImage: "person.3")
+                }
+
             StakeholderMapView()
                 .tabItem {
-                    Label("Mapping", systemImage: "map")
+                    Label("Map", systemImage: "map")
                 }
-            StakeholderAnalysisView()
+
+            DashboardView()
                 .tabItem {
-                    Label("Analysis", systemImage: "chart.pie")
+                    Label("Dashboard", systemImage: "chart.bar")
                 }
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
