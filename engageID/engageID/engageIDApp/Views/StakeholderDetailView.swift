@@ -1,5 +1,3 @@
-// engageIDApp/Views/StakeholderDetailView.swift
-
 import SwiftUI
 
 struct StakeholderDetailView: View {
