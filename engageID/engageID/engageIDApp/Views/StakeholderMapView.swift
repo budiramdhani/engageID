@@ -48,7 +48,7 @@ struct StakeholderMapView: View {
                         let y = geometry.size.height - (CGFloat(stakeholder.interest - 1) / 4 * geometry.size.height)
                         
                         Text("🔹")
-                            position(x: x, y: y)
+                            .position(x: x, y: y)
                             .overlay(
                                 Text(stakeholder.name)
                                     .font(.caption2)
